@@ -1,0 +1,6 @@
+<IfModule mod_headers.c>
+
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET,POST,DELETE,HEAD,PUT,OPTIONS"
+    Header add Access-Control-Allow-Headers "origin, x-requested-with, content-type"
+</IfModule>

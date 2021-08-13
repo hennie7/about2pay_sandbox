@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Create Transaction Details</title>
+	<script src="js/jquery-3.2.1.js"></script>
+</head>
+<body>
+<!-- 927b55ce-73c6-4e2e-bcc5-c90cbf7369d1_efb6f531-786a-4cad-b7f2-91bb24202d57_7648_ZAR_cetude -->
+
+<h3>Open form with buyer details included and options limited</h3>
+
+<form id="trustFormOpts" target="_self" action="index.php?ignore=ignore" method="POST">
+
+	<input type="hidden" name="m_uuid" id="m_uuid" value="870626fe-1170-4729-93f4-cc7ff2fbc7b9">
+	<input type="hidden" name="m_account_uuid" id="m_account_uuid" value="600d5c1b-9c6c-44aa-97fa-aac7c9b37f59">
+
+
+	<input type="hidden" name="b_name" id="b_name" value="Hennie">
+	<input type="hidden" name="b_surname" id="b_surname" value="Volschenk">
+	<input type="hidden" name="b_email" id="b_email" value="hennie@lantador.com">
+	<input type="hidden" name="b_mobile" id="b_mobile" value="+2798899898">
+	<input type="hidden" name="m_return_url" id="m_return_url" value="http://stag-trident-frontend.s3-website.us-east-2.amazonaws.com/package/confirmation-package">
+	<input type="hidden" name="m_notify_url" id="m_notify_url" value="https://trident.skywalkinnovations.co.za/api/accounts/payment-completed">
+    <input type="hidden" name="m_cancel_url" id="m_cancel_url" value="http://stag-trident-frontend.s3-website.us-east-2.amazonaws.com/package/confirmation-package"">
+	<input type="hidden" name="m_back2shop_url" id="m_back2shop_url" value="https://b2b.lantador.com">
+	<input type="text" name="m_passthrough" id="m_passthrough" value="cdc">
+	<!--<input type="hidden" name="post" id="post" value="true">-->
+
+	<ul>
+
+		<li><input type="text" placeholder="Transaction ID" name="m_tx_id" id="m_tx_id" value="ESVN1ZGZ1R"></li>
+		<li><input type="text" placeholder="Transaction Amount" name="m_tx_amount" id="m_tx_amount" value="2.50"></li>
+		<li><input type="text" placeholder="Transaction Currency" name="m_tx_currency" id="m_tx_currency" value="ZAR"></li>
+		<li><input type="text" placeholder="Item" name="m_tx_item_name" id="m_tx_item_name" value="BRI-ENT-IQ 500"></li>
+		<li><input type="text" placeholder="Item Description" name="m_tx_item_description" id="m_tx_item_description" value="Text product"></li>
+		<li><input type="text" placeholder="Order Number" name="m_tx_order_nr" id="m_tx_order_nr" value="SKY-01102"></li>
+		<li><input type="text" placeholder="Invoice Number" name="m_tx_invoice_nr" id="m_invoice_nr" value="INV-0037"></li>
+		<li><input type="text" placeholder="Category One" name="m_category_1" id="m_category_1" value="1"></li>
+		<li><input type="text" placeholder="Category Two" name="m_category_2" id="m_category_2" value="2"></li>
+		<li><input type="text" placeholder="Category Three" name="m_category_3" id="m_category_3" value="3"></li>
+		<li><input type="text" placeholder="Site Reference" name="m_site_reference" id="m_site_reference" value="SITE12456666567"></li>
+		<li><input type="text" placeholder="Site Name" name="m_site_name" id="m_site_name" value="Lantador"></li>
+		<li><input type="text" placeholder="Transaction Due Date" name="m_tx_due_date" id="m_tx_due_date" value="2020/07/21 17:30 GMT"></li>
+		<li><input type="text" placeholder="Transaction Message" name="m_message" id="m_message" value="Special"></li>
+		<li><input type="text" placeholder="Invoice Document URL" name="m_document_ref" id="m_document_ref" value="d"></li>
+		
+		<li><input type="text" placeholder="CHECKSUM" name="checksum" id="checksum" value="418e973f4ef314c86d1390aab787b3db"></li>
+        <!--<li><input type="text" placeholder="CHECKSUM" name="checksum" id="checksum" value="06DF5D83D53B1E299438DB501A177ECB"></li>-->
+		<li><input type="text" placeholder="secret" name="secret" id="secret" value="cetude"></li>
+		<li>
+			Accept Card:<br/>
+			<input type="text" placeholder="true / false" name="m_card_allowed" id="m_card_allowed" value="true">
+		</li>
+		<li>
+			Accept instantEFT:<br/>
+			<input type="text" placeholder="true / false" name="m_ieft_allowed" id="m_ieft_allowed" value="true">
+		</li>
+		<li>
+			Accept chipsPmt:<br/>
+			<input type="text" placeholder="true / false" name="m_chips_allowed" id="m_chips_allowed" value="true">
+		</li>
+		<li>
+			Accept Trident:<br/>
+			<input type="text" placeholder="true / false" name="m_trident_allowed" id="m_trident_allowed" value="false">
+		</li>
+		<li>
+			Accept masterpass:<br/>
+			<input type="text" placeholder="true / false" name="m_mpass_allowed" id="m_mpass_allowed" value="false">
+		</li>
+		<li>
+			Accept cashDeposit:<br/>
+			<input type="text" placeholder="true / false" name="m_payat_allowed" id="m_payat_allowed" value="false">
+		</li>
+
+	</ul>
+</form>
+
+
+<button onclick="addTransactionDetails('opts')">Submit</button>
+	<script>
+		function addTransactionDetails(x){
+
+			switch(x){
+				case "buyer":
+					$('#trustFormBuyer').submit();
+				break;
+				case "none":
+					$('#trustForm').submit();
+				break;
+				case "opts":
+					$('#trustFormOpts').submit();
+				break;
+			}
+
+		}
+	</script>
+</body>
+</html>
